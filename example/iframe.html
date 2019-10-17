@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Playground</title>
+    <script type="text/javascript" src="../node_modules/lodash/index.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/postal/lib/postal.js"></script>
+    <script type="text/javascript" src="../lib/postal.federation.js"></script>
+    <script type="text/javascript" src="../node_modules/postal.xframe/lib/postal.xframe.js"></script>
+    <script type="text/javascript">
+        postal.instanceId("iframe1");
+        postal.fedx.addFilter([
+            { channel: 'postal',  topic: '#', direction: 'in'  },
+            { channel: 'iframez', topic: '#', direction: 'in'  },
+            { channel: 'parentz', topic: '#', direction: 'out' }
+        ]);
+        postal.addWireTap(function(d, e) {
+            console.log("ID: " + postal.instanceId() + " - " + JSON.stringify(e, null, 4));
+        });
+        postal.subscribe({
+            channel: "iframez",
+            topic: "#",
+            callback: function(d, e) {
+                $("#msgs").append("<div><pre>" + JSON.stringify(e, null, 4) + "</pre></div>");
+            }
+        });
+
+        $(function() {
+
+            $("#msg2").on('click', function(){
+                postal.publish({
+                    channel: "parentz",
+                    topic: "some.topic",
+                    data: "This message will appear in the parent"
+                });
+            });
+            $("#msg3").on('click', function(){
+                postal.fedx.disconnect();
+            });
+
+            postal.fedx.signalReady();
+        });
+    </script>
+</head>
+<body>
+<div>
+    <input type="button" value="Send Msg" id="msg2">
+    <input type="button" value="Disconnect" id="msg3">
+</div>
+<div id="msgs"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Playground</title>
+    <script type="text/javascript" src="../node_modules/lodash/index.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/postal/lib/postal.js"></script>
+    <script type="text/javascript" src="../lib/postal.federation.js"></script>
+    <script type="text/javascript" src="../node_modules/postal.xframe/lib/postal.xframe.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+<div>
+    <iframe id="iframe1" src="iframe.html"></iframe>
+    <iframe id="iframe2" src="iframe2.html"></iframe>
+</div>
+<div>
+    <input type="button" value="Send Message" id="msg1">
+    <input type="button" value="Disconnect iframe 1" id="disconnect1">
+    <input type="button" value="Disconnect iframe 2" id="disconnect2">
+</div>
+<div id="msgs"></div>
+<script type="text/javascript">
+    postal.fedx.signalReady();
+</script>
+</body>
+</html>

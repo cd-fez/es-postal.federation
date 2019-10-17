@@ -1,0 +1,25 @@
+{
+    "name": "postal.federation",
+    "version": "0.5.3",
+    "description": "A base plugin for federating instances of postal.js across various boundaries.",
+    "homepage": "http://github.com/postaljs/postal.federation",
+    "keywords": [
+        "messaging",
+        "pubsub",
+        "frame",
+        "federation",
+        "postal"
+    ],
+    "author": "Jim Cowart <jim@ifandelse.com>",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/postaljs/postal.federation.git"
+    },
+    "main": [
+        "lib/postal.federation.js"
+    ],
+    "dependencies": {
+        "lodash": "^3.x",
+        "postal.js": ">=1.x"
+    }
+}
