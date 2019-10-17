@@ -5,7 +5,7 @@
   "homepage": "http://github.com/cd-fez/es-postal.federation.git",
   "repository": {
     "type": "git",
-    "url": "git+git://github.com/cd-fez/es-postal.federation.git"
+    "url": "git+https://github.com/cd-fez/es-postal.federation.git"
   },
   "author": "Jim Cowart (http://ifandelse.com)",
   "contributors": [
