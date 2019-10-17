@@ -1,11 +1,11 @@
 {
-  "name": "postal.federation",
+  "name": "es-postal.federation",
   "description": "A base plugin for federating instances of postal.js across various boundaries.",
   "version": "0.5.3",
-  "homepage": "http://github.com/postaljs/postal.federation",
+  "homepage": "https://github.com/cd-fez/postal.federation",
   "repository": {
     "type": "git",
-    "url": "git://github.com/postaljs/postal.federation.git"
+    "url": "git+https://github.com/cd-fez/postal.federation.git"
   },
   "author": "Jim Cowart (http://ifandelse.com)",
   "contributors": [
