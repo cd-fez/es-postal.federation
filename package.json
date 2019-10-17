@@ -70,7 +70,7 @@
     "karma-mocha": "^0.2.0",
     "karma-spec-reporter": "0.0.20",
     "mocha": "^2.3.0",
-    "open": "~0.0.4",
+    "open": "~7.0.0",
     "postal.xframe": "~0.3.0",
     "webpack": "^1.12.1",
     "webpack-stream": "^2.1.0"
